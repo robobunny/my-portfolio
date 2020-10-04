@@ -10,7 +10,6 @@
 
 nav {
   grid-area: navbar;
-  margin: 25px 0 0 0;
   padding: 6px;
 }
 
@@ -25,6 +24,7 @@ nav {
   display: inline-block;
   text-align: center;
   background-color: rgba($color: #ffffff, $alpha: 0.5);
+  color: $bunny-900;
   font-family: $mono-font;
   font-size: $phone-lg;
   padding: 15px;

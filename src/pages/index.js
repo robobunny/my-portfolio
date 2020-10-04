@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import style from "./home.module.scss"
-import {Navigation} from "../components/Header/Navigation"
 import Img from "gatsby-image"
+import { Navigation } from "../components/Header/Navigation"
 
 const IndexPage = ({ data }, ...props) => {
   const imgSrc = [
@@ -19,17 +19,20 @@ const IndexPage = ({ data }, ...props) => {
   ]
 
   return (
-    <div className={style.splashPage}>
+    <div className={`${style.splashPage} ${style.parallax}`}>
       <SEO title="Home" />
-      <Img
-        fluid={imgSrc}
-        className={style.image}
-      />
-      <div className={style.info}>
-        <h2 className={style.siteTitle}>William C. Duraney</h2>
-        <p className={style.siteSubtitle}>Fullstack Javascript Developer</p>
+      <div className={`${style.image} ${style.parallaxLayer} ${style.parallaxBack}`}>
+        <Img
+          fluid={imgSrc}
+        />
       </div>
-      <Navigation />
+      <div className={`${style.parallaxLayer} ${style.parallaxBase} ${style.info}`}>
+        <h2 className={style.siteTitle}>{"William C. Duraney"}</h2>
+        <p className={style.siteSubtitle}>{"Fullstack Javascript Developer"}</p>
+      </div>
+      <div className={`${style.parallaxLayer} ${style.parallaxBase} ${style.navigation}`}>
+        <Navigation />
+      </div>
     </div>
     )
 }
@@ -39,25 +42,34 @@ export const query = graphql`
     mobileBunny: file(relativePath: { eq: "bunny256.png" }) {
       childImageSharp {
         fluid(maxWidth: 256) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     desktopBunny: file(relativePath: { eq: "bunny1024.png" }) {
       childImageSharp {
         fluid(maxWidth: 512) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     hiDpiBunny: file(relativePath: { eq: "bunny1024.png" }) {
       childImageSharp {
         fluid(maxWidth: 1024) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
+      }
+    }
+    codeResume: file(relativePath: {eq: "home/codeResume.md"}) {
+      childMarkdownRemark {
+        html
       }
     }
   }
 `
 
 export default IndexPage
+
+//
+// <div className={style.codeblock} dangerouslySetInnerHTML={{__html: data.codeResume.childMarkdownRemark.html}}/>
+//

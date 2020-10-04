@@ -10,8 +10,9 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: scroll;
-  background: $bg-grad-1;
+  background: $bg-grad-2;
   background-attachment: fixed;
+  mix-blend-mode: normal;
 }
 
 body {
