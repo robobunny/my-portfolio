@@ -1,0 +1,30 @@
+@import "../styles/styles.scss";
+
+.splashPage {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 
+    "bunny"
+    "title"
+    "subtitle"
+    "navbar";
+}
+
+.image {
+  grid-area: bunny;
+  margin: 100px auto 0;
+}
+
+.siteTitle {
+  grid-area: title;
+  font-size: 9vw;
+  font-weight: bold;
+  text-align: center;
+  margin: 25px 0 0 0;
+}
+
+.siteSubtitle {
+  grid-area: subtitle;
+  font-size: 6.2vw;
+  text-align: center;
+}

@@ -1,13 +1,26 @@
 import React from "react"
-import HomeLayout from "../layouts/HomeLayout"
+import { Link } from "gatsby"
 import SEO from "../components/seo"
+import style from "./home.module.scss"
+import {Navigation} from "../components/Header/Navigation"
 
-const IndexPage = () => {
+const IndexPage = (props) => {
   return (
-    <HomeLayout>
+    <div className={style.splashPage}>
       <SEO title="Home" />
-    </HomeLayout>
-  )
+      <p className={style.image}>bunny</p>
+      <h2 className={style.siteTitle}>
+        <Link to="/">{props.title}</Link>
+      </h2>
+      <span className={style.siteSubtitle}>{props.subtitle}</span>
+      <Navigation />
+    </div>
+    )
+}
+
+IndexPage.defaultProps = {
+  title: "William C. Duraney",
+  subtitle: "Fullstack Javascript Developer",
 }
 
 export default IndexPage
