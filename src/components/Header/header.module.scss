@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 
+    "bunny"
+    "title"
+    "subtitle"
+    "navbar";
+}
+
+.siteTitle {
+  grid-area: title;
+  font-size: 9vw;
+  font-weight: bold;
+  text-align: center;
+  margin: 25px 0 0 0;
+}
+
+.siteSubtitle {
+  grid-area: subtitle;
+  font-size: 6.2vw;
+  text-align: center;
+}
+
+nav {
+  grid-area: navbar;
+  margin: 25px 0 0 0;
+  padding: 6px;
+}
+
+.navigationItems {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.navigationItems li {
+  background-color: rgba($color: #ffffff, $alpha: 0.5);
+  padding: 5px;
+}
+
+.image {
+  grid-area: bunny;
+  margin: 100px auto 0;
+}

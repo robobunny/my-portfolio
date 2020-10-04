@@ -1,0 +1,90 @@
+// Fira Code 400, 700
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+// Raleway 300, 400, 700, 900 & italic 300, 400, 700, 900
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+// Cantarell 400, 700 & italic 400.
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Variable definitions:
+
+  // Fonts
+  $heading-font: 'Raleway', sans-serif;
+  $text-font: 'Cantarell', serif;
+  $mono-font: 'Fira Code', monospace;
+
+  // Sizes
+  $screen-xs: 1.2rem;
+  $screen-sm: 1.4rem;
+  $screen-md: 1.6rem;
+  $screen-lg: 1.8rem;
+  $screen-xl: 2.0rem;
+  $screen-2xl: 2.4rem;
+  $screen-3xl: 2.8rem;
+  $screen-4xl: 3.6rem;
+  $screen-5xl: 4.8rem;
+  $screen-6xl: 6.4rem;
+
+  $phone-xs: 3.6vw;
+  $phone-sm: 4vw;
+  $phone-md: 5vw;
+  $phone-lg: 6.5vw;
+  $phone-xl: 8vw;
+
+  // Colors
+  $txt-primary: $bunny-800;
+  $txt-black: $dkgreen-800;
+
+// Global font properties
+
+body {
+  font-family: $text-font;
+  font-size: $phone-md;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+}
+
+h1 {
+  font-size: $phone-xl;
+}
+
+h2, h3 {
+  font-size: $phone-lg;
+}
+
+.mono {
+  font-family: $mono-font;
+}
+
+// Tablet
+
+@media (min-width: 512px) {
+  html {
+    font-size: 113%;
+  }
+  body {
+    font-size: $screen-md;
+  }
+  h1 {
+    font-size: $screen-3xl;
+  }
+  h2 {
+    font-size: $screen-2xl;
+  }
+  h3 {
+    font-size: $screen-xl;
+  }
+}
+
+// Monitor
+
+@media (min-width: 1024px) {
+  
+}
+
+// HiDPI Monitor
+
+@media (min-width: 1440px) {
+
+}
