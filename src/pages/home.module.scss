@@ -36,6 +36,7 @@
 
 .info {
   padding: 20vh 0 200vh;
+  color: $dkgreen-700;
 }
 
 .codeblock {
@@ -54,9 +55,9 @@
   display: inline-block;
   font-size: 16vw;
   font-weight: bolder;
-  color: $bunny-900;
   line-height: 80%;
   margin: 0 7vw;
+  text-shadow: -.2vh .2vh $bunny-600;
 }
 
 .siteSubtitle {
@@ -64,9 +65,9 @@
   box-sizing: border-box;
   font-size: 5.6vw;
   font-family: $heading-font;
-  color: $bunny-900;
   font-weight: bold;
   margin: 30px 7vw 0;
+  text-shadow: -.1vh .1vh $bunny-600;
 }
 
 .navigation {

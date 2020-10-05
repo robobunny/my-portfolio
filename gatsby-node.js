@@ -23,6 +23,9 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `)
   .then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
     const posts = result.data.allMarkdownRemark.edges
     posts.forEach(({ node }) => {
       const postPath = path.join("/blog", path.resolve(node.frontmatter.path))
@@ -34,5 +37,13 @@ exports.createPages = ({ graphql, actions }) => {
         },
       });
     });
-  })
+    createPage({
+      path: "/about/resume",
+      component: path.resolve(`./src/templates/resume.js`),
+      context: {
+        id: `10110`
+      }
+    });
+  });
 };
+

@@ -8,5 +8,6 @@
 
 // CSS
 import "normalize.css"
-import "./src/styles/prism-mytheme.css"
+// import "./src/styles/prism-mytheme.css"
+import "./src/styles/prism-okaidia-custom.css"
 import "./src/styles/styles.scss"
