@@ -4,18 +4,18 @@
   box-sizing: border-box;
 }
 
-.header {
-  
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .headerContent {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 2;
+  justify-content: space-between;
 }
 
 .imageContainer {
@@ -43,7 +43,7 @@ div.navOpen {
   cursor: pointer;
   display: inline-block;
   text-align: center;
-  background-color: rgba($color: $bunny-100, $alpha: 0.35);
+  background-color: rgba($color: $bunny-100, $alpha: 0.95);
   color: $bunny-900;
   font-family: $mono-font;
   font-size: $phone-lg;

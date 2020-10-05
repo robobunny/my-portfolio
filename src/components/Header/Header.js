@@ -30,7 +30,7 @@ const Header = () => {
             <Img fluid={data.lilBunny.childImageSharp.fluid} />
           </Link>
         </div>
-        <h2 className={style.siteTitle}>William C. Duraney</h2>
+        <h2 className={style.siteTitle}> </h2>
         <button className={`${style.menuButton}`} onClick={toggleNavOpen}>
           ☰
         </button>

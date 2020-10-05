@@ -13,22 +13,22 @@ export const navRoutes = [
   },
   {
     path: "/blog",
-    name: "blog",
+    name: "my blog",
     navOrder: 2
   },
   {
     path: "/projects",
-    name: "projects",
+    name: "my projects",
     navOrder: 1
   },
   {
     path: "/contact",
-    name: "contact",
+    name: "contact me",
     navOrder: 3
   },
   {
     path: "/about",
-    name: "about",
+    name: "about me",
     navOrder: 0
   }
 ]
