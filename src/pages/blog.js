@@ -3,13 +3,17 @@ import { graphql } from "gatsby"
 import BlogPostsList from "../components/Blog/BlogPostsList"
 import HomeLayout from "../layouts/HomeLayout"
 import SEO from "../components/seo"
+import style from "./blog.module.scss"
 
 export default function BlogHomePage ({ data }) {
   return (
     <HomeLayout>
-      <SEO title="Robobunny Blog" />
-      <h1>Robobunny Blog</h1>
-      <div dangerouslySetInnerHTML={{__html: data.BlogIntro.html}} />
+      <SEO title="Robobunny Blog"/>
+      <h1 className={style.title}>Robobunny Blog</h1>
+      <div 
+        dangerouslySetInnerHTML={{__html: data.BlogIntro.html}}
+        className={style.content}
+      />
       <BlogPostsList data={data.BlogPosts}/>
     </HomeLayout>
   )

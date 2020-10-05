@@ -56,16 +56,17 @@
   font-weight: bolder;
   color: $bunny-900;
   line-height: 80%;
-  margin: 0 10px;
+  margin: 0 7vw;
 }
 
 .siteSubtitle {
   display: inline-block;
   box-sizing: border-box;
   font-size: 5.6vw;
+  font-family: $heading-font;
   color: $bunny-900;
   font-weight: bold;
-  margin: 30px 10px 0;
+  margin: 30px 7vw 0;
 }
 
 .navigation {

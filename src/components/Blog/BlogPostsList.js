@@ -1,5 +1,6 @@
 import React from "react"
 import BlogPostCell from "./BlogPostCell"
+import style from "./blogPostList.module.scss"
 
 export default function BlogPostsList ({ data }, ...props) {
   const Posts = data.edges
@@ -12,8 +13,8 @@ export default function BlogPostsList ({ data }, ...props) {
   
   return (
     <div>
-      <h2 className="blog-posts-list-title">Blog Posts:</h2>
-      <ul className="blog-posts-list">
+      <h2 className={style.title}>Blog Posts:</h2>
+      <ul className={style.blogPostList}>
         {Posts}
       </ul>
     </div>
