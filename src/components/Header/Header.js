@@ -18,7 +18,11 @@ const Header = () => {
   `)
 
   const [navOpen, setNavOpen] = useState(false)
-  const toggleNavOpen = () => {setNavOpen(!navOpen)}
+  const [navOpenStyles, setNavOpenStyles] = useState(false)
+  const toggleNavOpen = () => {
+    setTimeout(()=>{setNavOpenStyles(!navOpenStyles)}, 300)
+    setNavOpen(!navOpen)
+  }
 
   return (
     <header className={style.header}>
@@ -30,12 +34,12 @@ const Header = () => {
             <Img fluid={data.lilBunny.childImageSharp.fluid} />
           </Link>
         </div>
-        <h2 className={style.siteTitle}> </h2>
         <button className={`${style.menuButton}`} onClick={toggleNavOpen}>
           ☰
         </button>
       </div>
       <div className={`${style.navContainer} ${navOpen && style.navOpen}`}>
+        <h2 className={style.siteTitle}>William C. Duraney</h2>
         <Navigation />
       </div>
     </header>

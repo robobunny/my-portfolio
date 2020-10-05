@@ -90,5 +90,13 @@ $bg-grad-2:
     #D7FECB 0%, 
     #00AB36 100%);
 
+$bg-grad-3: 
+  radial-gradient(96.38% 106.82% at 100% -2.59%, 
+    #D7FECB 0%, 
+    rgba(0, 238, 32, 0) 100%), 
+  linear-gradient(180deg, 
+    #D7FECB 0%, 
+    #00AB36 100%);
+
 $shadow-grad-1:
   linear-gradient(-90deg, rgba($color: $bunny-600, $alpha: 0) 0%, $bunny-200 100%)

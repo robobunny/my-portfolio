@@ -1,1 +1,1 @@
-This is my blog. What you are currently reading is not my blog, but rather, a blurb about my blog, meant to introduce you to the concept of my blog.
+This is my blog. If you're looking for something interesting, why don't you try out the [Projects](/projects) page instead?
