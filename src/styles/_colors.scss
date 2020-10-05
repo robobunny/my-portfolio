@@ -91,4 +91,4 @@ $bg-grad-2:
     #00AB36 100%);
 
 $shadow-grad-1:
-  linear-gradient(90deg, $bunny-600 0%, $bunny-400 100%)
+  linear-gradient(-90deg, rgba($color: $bunny-600, $alpha: 0) 0%, $bunny-200 100%)

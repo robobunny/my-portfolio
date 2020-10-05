@@ -1,16 +1,21 @@
 import React from "react"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
+import style from "./blogPostCell.module.scss"
 
 const BlogPostCell = (props) => {
   const { path, excerpt, tags, title, date } = props.postInfo
   const postPath = "/blog" + path
+  const goToPost = () => navigate(`${postPath}`)
   return (
-    <div className="blog-post-cell">
-      <Link to={postPath} className="blog-post-cell-title">{title}</Link>
-      <p className="blog-post-cell-date">{date}</p>
-      <p className="blog-post-cell-exceprt">{excerpt}</p>
-      <p className="blog-post-cell-tags">Tags: {tags.join(', ')}</p>
-    </div>
+    <button onClick={goToPost} className={style.blogPostCell}>
+      <p className={style.title}>{title}</p>
+      <p className={style.date}>{date}</p>
+      <blockquote className={style.excerpt}>{excerpt}</blockquote>
+      <p className={style.tags}>{
+        tags.map((tag, index) => (
+          <div key={index} className={style.tag}>{tag}</div>
+        ))}</p>
+    </button>
   )
 }
 

@@ -1,0 +1,57 @@
+@import "../../styles/styles.scss";
+
+.blogPostCell {
+  cursor: pointer;
+  // background-color: rgba($color: $bunny-100, $alpha: .25);
+  margin: 10px;
+  padding: 10px;
+  border: 5px $bunny-100 solid;
+  box-shadow: -3px 3px $bunny-100;
+  border-radius: 10px;
+  text-align: left;
+  background: $shadow-grad-1;
+  width: 85vw;
+  overflow: auto;
+}
+
+.postCellHeading {
+  margin: 0;
+  padding: 10px;
+}
+
+.title {
+  font-family: $heading-font;
+  font-size: $phone-lg;
+  color: $bunny-900;
+  font-weight: bold;
+  margin: 0;
+}
+
+.date {
+  font-size: $phone-sm;
+  font-style: italic;
+  color: $bunny-900;
+  margin: 0;
+}
+
+.excerpt {
+  margin: 5px 0;
+  padding-left: 5px;
+  border-left: 5px solid $grey-700; 
+}
+
+.tags {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+  width: 100%;
+}
+
+.tag {
+  color: $bunny-900;
+  font-style: italic;
+  background-color: rgba($color: $grey-400, $alpha: .4);
+  line-height: 150%;
+  margin: 5px;
+  padding: 1px 3px;
+}

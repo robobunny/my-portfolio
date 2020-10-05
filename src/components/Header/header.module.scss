@@ -5,16 +5,17 @@
 }
 
 .header {
-  z-index: 2;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  
 }
 
 .headerContent {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .imageContainer {
@@ -42,15 +43,15 @@ div.navOpen {
   cursor: pointer;
   display: inline-block;
   text-align: center;
-  background-color: rgba($color: #ffffff, $alpha: 0.5);
+  background-color: rgba($color: $bunny-100, $alpha: 0.35);
   color: $bunny-900;
   font-family: $mono-font;
   font-size: $phone-lg;
-  padding: 15px;
+  padding: 9px 11px;
   margin: 0 16px 0 0;
-  border: 3px $bunny-100 solid;
+  border: 3px $bunny-700 solid;
+  box-shadow: -3px 3px $bunny-700;
   border-radius: 5px;
-  box-shadow: -3px 3px $bunny-100;
 
   &:hover {
     box-shadow: -3px 3px $bunny-100, -4px 8px 10px $bunny-700;
@@ -75,15 +76,16 @@ nav {
 .navigationItems a {
   display: inline-block;
   text-align: center;
-  background-color: rgba($color: #ffffff, $alpha: 0.5);
+  background-color: rgba($color: $bunny-100, $alpha: 0.35);
   color: $bunny-900;
   font-family: $mono-font;
   font-size: $phone-lg;
+  font-weight: bold;
   padding: 15px;
   margin: 8px auto;
-  border: 3px $bunny-100 solid;
+  border: 3px $bunny-700 solid;
   border-radius: 5px;
-  box-shadow: -3px 3px $bunny-100;
+  box-shadow: -3px 3px $bunny-700;
 
   &:hover {
     box-shadow: -3px 3px $bunny-100, -4px 8px 10px $bunny-700;
