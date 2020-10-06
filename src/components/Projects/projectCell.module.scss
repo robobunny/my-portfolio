@@ -1,0 +1,29 @@
+@import "../../styles/styles.scss";
+
+.projectCell {
+  cursor: pointer;
+  // background-color: rgba($color: $bunny-100, $alpha: .25);
+  margin: 10px;
+  padding: 10px;
+  border: 5px $bunny-100 solid;
+  box-shadow: -3px 3px $bunny-100;
+  border-radius: 10px;
+  text-align: left;
+  background: $shadow-grad-1;
+  width: 85vw;
+  overflow: auto;
+}
+
+.title {
+  font-family: $heading-font;
+  font-size: $phone-lg;
+  color: $dkgreen-700;
+  font-weight: bold;
+  margin: 0;
+}
+
+.summary {
+  margin: 5px 0;
+  padding-left: 5px;
+  border-left: 5px solid $grey-700; 
+}

@@ -22,9 +22,7 @@ const IndexPage = ({ data }, ...props) => {
     <div className={`${style.splashPage} ${style.parallax}`}>
       <SEO title="Home" />
       <div className={`${style.image} ${style.parallaxLayer} ${style.parallaxBack}`}>
-        <Img
-          fluid={imgSrc}
-        />
+        <Img fluid={imgSrc}/>
       </div>
       <div className={`${style.parallaxLayer} ${style.parallaxBase} ${style.info}`}>
         <h2 className={style.siteTitle}>{"William C. Duraney"}</h2>

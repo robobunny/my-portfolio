@@ -1,6 +1,9 @@
 ---
+hasOwnPage: true
+number: 1
 title: "Weather App"
-path: "/projects/weather-app"
+summary: "Weather App made with Node.js"
+path: "/weather-app"
 img: "weather-app.png"
 ---
 [Check out the app!](https://robobunny-weather-app.herokuapp.com)

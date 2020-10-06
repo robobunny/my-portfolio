@@ -1,6 +1,9 @@
 ---
+hasOwnPage: true
+number: 0
 title: "Magic 8 Bunny"
-path: "/projects/magic-8-bunny"
+summary: "The first app I ever made using React"
+path: "/magic-8-bunny"
 img: "magic-8-bunny.png"
 ---
 [Check out the app!](https://magic-8-bunny.surge.sh)
