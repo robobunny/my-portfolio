@@ -1,0 +1,35 @@
+@import "../styles//styles.scss";
+
+* {
+  color: $dkgreen-700;
+}
+
+.content {
+    h2, h3, h4, h5 {
+      font-weight: bold;
+      color: $dkgreen-700;
+      background: $shadow-grad-1;
+  }
+}
+
+.title {
+  color: $dkgreen-700;
+  font-weight: bold;
+  background: $shadow-grad-1;
+}
+
+.button {
+  z-index: 1;
+  cursor: pointer;
+  padding: 9px 11px;
+  margin: 0 16px 0 0;
+  display: inline-block;
+  text-align: center;
+  background-color: rgba($color: $bunny-100, $alpha: 0.95);
+  color: $dkgreen-700;
+  font-family: $mono-font;
+  font-size: $phone-md;
+  border: 3px $dkgreen-700 solid;
+  box-shadow: -3px 3px $dkgreen-700;
+  border-radius: 5px;
+}
