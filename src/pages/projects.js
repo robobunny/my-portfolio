@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 import ProjectList from "../components/Projects/ProjectList"
 import SEO from "../components/seo"
@@ -13,7 +13,16 @@ const ProjectsPage = ({ data }) => {
       <h1 className={style.title}>My Projects</h1>
       <p className={style.content}>Here are a few of my projects:</p>
       <ProjectList />
-      <div className={style.content} dangerouslySetInnerHTML={{ __html: infoText }} />
+      <div
+        className={style.content}
+        dangerouslySetInnerHTML={{ __html: infoText }}
+      />
+      <Link to={"/blog"} className={style.button}>
+        My Blog
+      </Link>
+      <Link to={"/about/resume"} className={style.button}>
+        My Resume
+      </Link>
     </HomeLayout>
   )
 }
