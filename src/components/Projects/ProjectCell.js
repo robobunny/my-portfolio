@@ -4,7 +4,7 @@ import style from "./projectCell.module.scss"
 
 const ProjectCell = (props) => {
   const { title, summary, path: projectPath } = props.projectInfo
-  const goToProject = () => navigate(`/project/${projectPath}`)
+  const goToProject = () => navigate(`/projects${projectPath}`)
   return (
     <button onClick={goToProject} className={style.projectCell}>
       <p className={style.title}>{title}</p>

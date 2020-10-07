@@ -13,3 +13,22 @@
   font-weight: bold;
   background: $shadow-grad-1;
 }
+
+.content a {
+  box-shadow: inset 0 -.5em $bunny-500, 0 .25em $bunny-500;
+}
+
+.imageContainer {
+  border-radius: 10px;
+  width: 85vw;
+  margin: 10px auto;
+}
+
+img {
+  object-position: top left;
+  object-fit: cover;
+}
+
+.content ul {
+  list-style: disc inside;
+}
