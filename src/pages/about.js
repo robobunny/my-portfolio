@@ -1,4 +1,4 @@
-import { graphql, navigate } from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 import SEO from "../components/seo"
 import HomeLayout from "../layouts/HomeLayout"
@@ -11,9 +11,21 @@ const AboutPage = ({ data }) => {
     <HomeLayout>
       <SEO title="About William Duraney" />
       <h1 className={style.title}>About Me</h1>
-      <button onClick={(()=>{navigate("resume")})} className={style.button}>My Resume</button>
-        <Img fluid={data.profilePic.childImageSharp.fluid} alt="William C. Duraney in a park" className={style.profilePic}/>
+      <Link to={"resume"} className={style.button}>My Resume</Link>
+        <Img fluid={data.profilePic.childImageSharp.fluid} alt={"William C. Duraney in a park"} className={style.profilePic}/>
         <div className={style.content} dangerouslySetInnerHTML={{ __html: infoText }}/>
+      <Link
+        to={"/projects"}
+        className={style.button}
+      >
+        My Projects
+      </Link>
+      <Link
+        to={"/contact"}
+        className={style.button}
+      >
+        Contact Me
+      </Link>
     </HomeLayout>
   )
 }
