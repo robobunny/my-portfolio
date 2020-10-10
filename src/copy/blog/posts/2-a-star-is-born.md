@@ -1,5 +1,6 @@
 ---
 type: "blogPost"
+isDraft: true
 title: "A Star is Born"
 date: "2020-10-02 12:00"
 path: "/a-star-is-born"

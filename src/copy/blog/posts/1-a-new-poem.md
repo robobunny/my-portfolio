@@ -1,5 +1,6 @@
 ---
 type: "blogPost"
+isDraft: false
 path: '/a-new-poem'
 date: '2020-10-01 13:00'
 title: 'A Poem'
