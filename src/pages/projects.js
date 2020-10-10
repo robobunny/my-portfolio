@@ -17,12 +17,16 @@ const ProjectsPage = ({ data }) => {
         className={style.content}
         dangerouslySetInnerHTML={{ __html: infoText }}
       />
-      <Link to={"/blog"} className={style.button}>
-        My Blog
-      </Link>
-      <Link to={"/about/resume"} className={style.button}>
-        My Resume
-      </Link>
+      <p>
+        <Link to={"/blog"} className={style.button}>
+          My Blog
+        </Link>
+      </p>
+      <p>
+        <Link to={"/about/resume"} className={style.button}>
+          My Resume
+        </Link>
+      </p>
     </HomeLayout>
   )
 }

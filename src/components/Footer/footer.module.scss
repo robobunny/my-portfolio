@@ -5,8 +5,13 @@ footer {
   position: absolute;
   bottom: 0;
   padding: 10px;
-  height: 50px;
   width: 100%;
-  background-color: rgba($color: #FFF, $alpha: 0.5);
+  background-color: rgba($color: #FFF, $alpha: 0.25);
   text-align: center;
+  font-family: $mono-font;
+  font-size: $phone-xs;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 5px;
+  gap: 5px;
 }
