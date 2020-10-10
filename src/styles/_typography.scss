@@ -52,8 +52,16 @@ h1 {
   font-size: $phone-xl;
 }
 
-h2, h3 {
+h2 {
   font-size: $phone-lg;
+}
+
+h3, h4, h5 {
+  font-size: $phone-md;
+}
+
+h6 {
+  font-size: $phone-sm;
 }
 
 .mono {

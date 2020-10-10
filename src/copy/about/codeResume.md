@@ -1,8 +1,9 @@
 ---
 path: "/about/resume"
 id: "codeResume"
+title: "My Code Resume"
 ---
-# My Code Resume
+If I were made of Javascript ...
 
 ```js
 export default class WilliamDuraney extends SoftwareEngineer {

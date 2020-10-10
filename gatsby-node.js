@@ -9,17 +9,22 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions 
   return graphql(`
     {
-      blogPosts: allMarkdownRemark (filter: {frontmatter: {type: {eq:"blogPost"}}}) {
+      blogPosts: allFile (filter: {
+        relativePath: {glob: "blog/posts/*"}
+      }) {
         edges {
           node {
-            frontmatter {
-              path
+            childMarkdownRemark {
+              frontmatter {
+                isDraft
+                path
+              }
+              id
             }
-            id
           }
         }
       }
-      projects: allFile(filter: {
+      projects: allFile (filter: {
         relativePath: {glob: "projects/*"}, 
         childMarkdownRemark: {
           frontmatter: {
@@ -44,16 +49,18 @@ exports.createPages = ({ graphql, actions }) => {
     if (result.errors) {
       throw result.errors
     }
-    const blogPostTemplate = path.resolve('src/templates/post.js')
     const posts = result.data.blogPosts.edges
-    posts.forEach(({ node }) => {
-      const postPath = path.join("/blog", path.resolve(node.frontmatter.path))
-      console.log("building blog post: ", postPath)
+    posts.forEach(({ node: post }) => {
+      const isDraft = post.childMarkdownRemark.frontmatter.isDraft
+      const postPath = isDraft ? 
+        path.join("/blog/draft", path.resolve(post.childMarkdownRemark.frontmatter.path)) : 
+        path.join("/blog", path.resolve(post.childMarkdownRemark.frontmatter.path));
+      console.log(`building ${isDraft ? "draft" : "blog post"}: `, postPath)
       createPage({
         path: postPath,
-        component: blogPostTemplate,
+        component: path.resolve('src/templates/post.js'),
         context: {
-          id: node.id
+          id: post.childMarkdownRemark.id
         },
       });
     });

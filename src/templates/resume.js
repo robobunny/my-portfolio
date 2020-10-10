@@ -1,21 +1,32 @@
 import React from "react"
-import { navigate, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import HomeLayout from "../layouts/HomeLayout"
 import style from "./resume.module.scss"
 
 export default function CodeResume({ data }) {
-  const { html } = data.codeResume.childMarkdownRemark
+  const { html, frontmatter } = data.codeResume.childMarkdownRemark
 
   return (
     <HomeLayout>
       <SEO title={`Resume`} />
-      <div 
+      <h1 className={style.title}>{frontmatter.title}</h1>
+      <div
         className={style.resume}
-        dangerouslySetInnerHTML={{__html: html}} 
+        dangerouslySetInnerHTML={{ __html: html }}
       />
-      <button onClick={()=>{navigate("/projects")}}>My Projects</button>
-      <button onClick={()=>{navigate("/contact")}}>Contact Me</button>
+      <Link
+        to={"/projects"}
+        className={style.button}
+      >
+        My Projects
+      </Link>
+      <Link
+        to={"/contact"}
+        className={style.button}
+      >
+        Contact Me
+      </Link>
     </HomeLayout>
   )
 }
@@ -24,6 +35,9 @@ export const query = graphql`
   {
     codeResume: file(relativePath: {eq: "about/codeResume.md"}) {
       childMarkdownRemark {
+        frontmatter {
+          title
+        }
         html
       }
     }

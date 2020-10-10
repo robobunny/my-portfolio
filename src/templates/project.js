@@ -6,13 +6,12 @@ import Img from "gatsby-image"
 import style from "./project.module.scss"
 
 export default function ProjectTemplate({ data }) {
-  console.log(data);
   const { title } = data.projectInfo.frontmatter
   const { html } = data.projectInfo
-  const image = 
-    data.ImageSm ?
-    (
-      <Img fluid={[
+  
+  const buildImageElement = (data) => {
+    if (!!data.imageMd) {
+      const imageSrc = [
         data.imageSm.childImageSharp.fluid,
         {
           ...data.imageMd.childImageSharp.fluid,
@@ -22,15 +21,24 @@ export default function ProjectTemplate({ data }) {
           ...data.imageLg.childImageSharp.fluid,
           media: `(min-width: 1440px)`,
         },
-      ]}/>
-    ) :
-    (false)
+      ]
+      return (
+        <Img
+          fluid={imageSrc}
+          alt={`Screenshot from the ${title} app`}
+          className={style.imageContainer}
+        />
+      )
+    } else {
+      return false
+    }
+  }
 
   return (
     <HomeLayout>
       <SEO title={title} />
       <h1 className={style.title}>{title}</h1>
-      {image}
+        {buildImageElement(data)}
       <div className={style.content} dangerouslySetInnerHTML={{__html: html}} />
     </HomeLayout>
   )
@@ -46,7 +54,7 @@ export const query = graphql`
     }
     imageSm: file(relativePath: { eq: $imageSource }){
       childImageSharp {
-        fluid(maxWidth: 256){
+        fluid(maxWidth: 512){
           ...GatsbyImageSharpFluid
         }
       }
@@ -60,7 +68,7 @@ export const query = graphql`
     }
     imageLg: file(relativePath: { eq: $imageSource }){
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1440) {
           ...GatsbyImageSharpFluid
         }
       }

@@ -1,4 +1,8 @@
-@import "../styles/styles.scss";
+@import "../styles//styles.scss";
+
+* {
+  color: $dkgreen-700;
+}
 
 .content {
     h2, h3, h4, h5 {
@@ -18,7 +22,7 @@
   z-index: 1;
   cursor: pointer;
   padding: 9px 11px;
-  margin: 10px;
+  margin: 0 16px 0 0;
   display: inline-block;
   text-align: center;
   background-color: rgba($color: $bunny-100, $alpha: 0.95);
