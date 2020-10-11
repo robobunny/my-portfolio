@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import HomeLayout from "../layouts/HomeLayout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
@@ -40,6 +40,9 @@ export default function ProjectTemplate({ data }) {
       <h1 className={style.title}>{title}</h1>
         {buildImageElement(data)}
       <div className={style.content} dangerouslySetInnerHTML={{__html: html}} />
+      <Link to="/projects">
+        Projects Home
+      </Link>
     </HomeLayout>
   )
 }
