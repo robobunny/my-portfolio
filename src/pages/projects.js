@@ -11,7 +11,7 @@ const ProjectsPage = ({ data }) => {
     <HomeLayout>
       <SEO title="My Projects" />
       <h1 className={style.title}>My Projects</h1>
-      <p className={style.content}>Here are a few of my projects:</p>
+      <p className={style.content}>Here are a few of the things I've made:</p>
       <ProjectList />
       <div
         className={style.content}
@@ -23,7 +23,8 @@ const ProjectsPage = ({ data }) => {
         </Link>
       </p>
       <p>
-        <Link to={"/about/resume"} className={style.button}>
+        Or you can check out
+        <Link to={"/about/resume"} style={{margin: '0 5px'}}>
           My Resume
         </Link>
       </p>

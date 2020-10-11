@@ -1,0 +1,15 @@
+@import "../styles/styles.scss";
+
+.content {
+    h2, h3, h4, h5 {
+      font-weight: bold;
+      color: $dkgreen-700;
+      background: $shadow-grad-1;
+  }
+}
+
+.title {
+  color: $dkgreen-700;
+  font-weight: bold;
+  background: $shadow-grad-1;
+}

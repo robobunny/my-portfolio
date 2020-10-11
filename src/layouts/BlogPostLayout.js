@@ -6,7 +6,11 @@ import style from "./blogPostLayout.module.scss"
 const BlogPostLayout = ({ children }) => (
   <div className={style.blogPostLayout}>
     <Header />
-      {children}
+      <main>
+        <div className={style.blogPostLayoutContent}>
+          {children}
+        </div>
+      </main>
     <Footer />
   </div>
 )

@@ -11,7 +11,12 @@ export default function BlogPostTemplate({ data }) {
   return (
     <BlogPostLayout>
       <SEO title={title} />
-      <BlogPost date={date} html={html} tags={tags} title={title} />
+      <BlogPost 
+        date={date} 
+        html={html} 
+        tags={tags} 
+        title={title}
+      />
     </BlogPostLayout>
   )
 }
