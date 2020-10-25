@@ -14,23 +14,12 @@
   overflow: auto;
 }
 
-.postCellHeading {
-  margin: 0;
-  padding: 10px;
-}
-
 .title {
-  font-family: $heading-font;
-  font-size: $phone-lg;
-  color: $dkgreen-700;
-  font-weight: bold;
-  margin: 0;
+  
 }
 
 .date {
-  font-size: $phone-sm;
   font-style: italic;
-  color: $dkgreen-700;
   margin: 0;
 }
 
@@ -48,7 +37,6 @@
 }
 
 .tag {
-  color: $dkgreen-700;
   font-style: italic;
   background-color: rgba($color: $grey-400, $alpha: .4);
   line-height: 150%;

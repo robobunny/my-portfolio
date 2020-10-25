@@ -7,7 +7,7 @@ const ProjectCell = (props) => {
   const goToProject = () => navigate(`/projects${projectPath}`)
   return (
     <button onClick={goToProject} className={style.projectCell}>
-      <p className={style.title}>{title}</p>
+      <h3 className={style.title}>{title}</h3>
       <blockquote className={style.summary}>{summary}</blockquote>
     </button>
   )

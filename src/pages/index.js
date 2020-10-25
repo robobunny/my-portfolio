@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import style from "./home.module.scss"
 import Img from "gatsby-image"
-import { Navigation } from "../components/Header/Navigation"
+import { Navigation } from "../components/Navigation/Navigation"
 
 const IndexPage = ({ data }, ...props) => {
   const imgSrc = [
@@ -18,21 +18,63 @@ const IndexPage = ({ data }, ...props) => {
     },
   ]
 
+  const profilePic = [
+    data.mobileProfile.childImageSharp.fluid,
+    {
+      ...data.desktopProfile.childImageSharp.fluid,
+      media: `(min-width: 768px)`,
+    },
+  ]
+
   return (
     <div className={`${style.splashPage} ${style.parallax}`}>
       <SEO title="Home" />
-      <div className={`${style.image} ${style.parallaxLayer} ${style.parallaxBack}`}>
-        <Img fluid={imgSrc}/>
+      <div className={`${style.parallaxGroup} ${style.pGroup1}`}>
+        <div
+          className={`\
+            ${style.bunny} \
+            ${style.parallaxLayer} \
+            ${style.parallaxBack2} \
+          `}
+        >
+          <Img fluid={imgSrc} />
+        </div>
+        <div
+          className={`\
+            ${style.parallaxLayer} \
+            ${style.parallaxBack1} \
+            ${style.info} \
+          `}
+        >
+          <h1 className={style.siteTitle}>{"William C. Duraney"}</h1>
+          <p className={style.siteSubtitle}>
+            {"Fullstack Javascript Developer"}
+          </p>
+        </div>
+        <div
+          className={`\
+            ${style.parallaxLayer} \
+            ${style.parallaxForward1} \
+            ${style.profileImage} \
+          `}
+        >
+          <Img fluid={profilePic} />
+        </div>
+        <div
+          className={`\
+            ${style.parallaxLayer} \
+            ${style.parallaxBase} \
+            ${style.navigation} \
+          `}
+        >
+          <Navigation align="center" />
+        </div>
       </div>
-      <div className={`${style.parallaxLayer} ${style.parallaxBase} ${style.info}`}>
-        <h2 className={style.siteTitle}>{"William C. Duraney"}</h2>
-        <p className={style.siteSubtitle}>{"Fullstack Javascript Developer"}</p>
-      </div>
-      <div className={`${style.parallaxLayer} ${style.parallaxBase} ${style.navigation}`}>
-        <Navigation />
-      </div>
+      {/*<div className={`${style.parallaxGroup} ${style.pGroup2}`}>
+        <p>Some words</p>
+      </div>*/}
     </div>
-    )
+  )
 }
 
 export const query = graphql`
@@ -58,9 +100,23 @@ export const query = graphql`
         }
       }
     }
-    codeResume: file(relativePath: {eq: "home/codeResume.md"}) {
+    codeResume: file(relativePath: { eq: "home/codeResume.md" }) {
       childMarkdownRemark {
         html
+      }
+    }
+    mobileProfile: file(relativePath: { eq: "profilePic/mobile.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    desktopProfile: file(relativePath: { eq: "profilePic/desktop.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1024) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
       }
     }
   }

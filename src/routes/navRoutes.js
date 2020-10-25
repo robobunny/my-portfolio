@@ -8,27 +8,27 @@ export const navRoutes = [
   //  
   {
     path: "/",
-    name: "home",
+    name: "Home",
     navOrder: -1
   },
   {
     path: "/blog",
-    name: "my blog",
+    name: "My Blog",
     navOrder: 2
   },
   {
     path: "/projects",
-    name: "my projects",
+    name: "My Projects",
     navOrder: 1
   },
   {
     path: "/contact",
-    name: "contact me",
+    name: "Contact Me",
     navOrder: 3
   },
   {
     path: "/about",
-    name: "about me",
+    name: "About Me",
     navOrder: 0
   }
 ]

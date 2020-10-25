@@ -1,101 +1,130 @@
 // Fira Code 400, 700
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+// Courier Prime 400, 700
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 // Raleway 300, 400, 700, 900 & italic 300, 400, 700, 900
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 // Cantarell 400, 700 & italic 400.
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400&display=swap');
+// Krona One 400
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 
 // Variable definitions:
 
-  // Fonts
-  $heading-font: 'Raleway', sans-serif;
-  $text-font: 'Cantarell', serif;
-  $mono-font: 'Fira Code', monospace;
-
-  // Sizes
-  $screen-xs: 1.2rem;
-  $screen-sm: 1.4rem;
-  $screen-md: 1.6rem;
-  $screen-lg: 1.8rem;
-  $screen-xl: 2.0rem;
-  $screen-2xl: 2.4rem;
-  $screen-3xl: 2.8rem;
-  $screen-4xl: 3.6rem;
-  $screen-5xl: 4.8rem;
-  $screen-6xl: 6.4rem;
-
-  $phone-xs: 4vw;
-  $phone-sm: 5vw;
-  $phone-md: 6vw;
-  $phone-lg: 7.5vw;
-  $phone-xl: 9vw;
+  // Typefaces
+  $font-heading: 'Raleway', sans-serif;
+  $font-text: 'Cantarell', serif;
+  $font-mono: 'Courier Prime', 'Fira Code', 'Courier New' monospace;
+  $font-accent: 'Krona One', 'Raleway', sans-serif;
 
   // Colors
-  $txt-primary: $bunny-800;
-  $txt-black: $dkgreen-800;
+  $color-primary: $bunny-100;
+  $color-accent: $bunny-400;
 
-  // Text Decoration
-  $box-shadow-1: inset 0 -.3em $bunny-500, 0 .3em $bunny-500;
+    // Defaults
+    body {
+      font-family: $font-text;
+      color: $color-primary
+    }
 
-// Global font properties
+    h1,h2,h3,h4,h5,h6 {
+      font-family: $font-heading;
+      font-weight: bold;
+		}
+		
+		a {
+			color: $color-primary;
+		}
 
-body {
-  font-family: $text-font;
-  font-size: $phone-md;
+    .accent {
+      font-family: $font-accent;
+    }
+
+    .mono {
+      font-family: $font-mono;
+    }
+
+// Sizes
+$baseline: 1.5rem;
+
+$minScreen: 20rem;
+$maxScreen: 100rem;
+$minFont: .9rem;
+$maxFont: 2.2rem;
+
+$h1: 2.2rem;
+$h2: 1.5rem;
+$h3: 1.25rem;
+$h4: 1rem;
+$h5: .875rem;
+
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+	& {
+		@each $property in $properties {
+			#{$property}: $min-value;
+		}
+
+		@media screen and (min-width: $min-vw) {
+			@each $property in $properties {
+				#{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+		}
+
+		@media screen and (min-width: $max-vw) {
+			@each $property in $properties {
+				#{$property}: $max-value;
+			}
+		}
+	}
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $heading-font;
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+html {
+	height: 100%;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	@include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
+}
+
+body {
+	line-height: $baseline;
+}
+
+p{	
+	line-height: $baseline;
+	margin-bottom: $baseline;
 }
 
 h1 {
-  font-size: $phone-xl;
+	font-size: $h1;
+	line-height: $h1;
+	margin-top: calc((#{$baseline} - #{$h1}) + #{$baseline});
 }
 
 h2 {
-  font-size: $phone-lg;
+	font-size: $h2;
+	line-height: $h2;
+	margin-top: calc((#{$baseline} - #{$h2}) + #{$baseline}*2);
 }
 
-h3, h4, h5 {
-  font-size: $phone-md;
+h3 {
+	font-size: $h3;
+	line-height: $h3;
+	margin-top: calc((#{$baseline} - #{$h3}) + #{$baseline}*2);
 }
 
-h6 {
-  font-size: $phone-sm;
+h4 {
+	font-size: $h4;
+	line-height: $h4;
+	margin-top: calc((#{$baseline} - #{$h4}) + #{$baseline}*2);
 }
 
-.mono {
-  font-family: $mono-font;
-}
-
-// Tablet
-
-@media (min-width: 512px) {
-  html {
-    font-size: 113%;
-  }
-  body {
-    font-size: $screen-md;
-  }
-  h1 {
-    font-size: $screen-3xl;
-  }
-  h2 {
-    font-size: $screen-2xl;
-  }
-  h3 {
-    font-size: $screen-xl;
-  }
-}
-
-// Monitor
-
-@media (min-width: 1024px) {
-  
-}
-
-// HiDPI Monitor
-
-@media (min-width: 1440px) {
-
+h5 {
+	font-size: $h5;
+	line-height: $h5;
+	margin-top: calc((#{$baseline} - #{$h5}) + #{$baseline}*2);
 }

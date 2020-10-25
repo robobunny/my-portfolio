@@ -1,0 +1,54 @@
+@import '../../styles/styles.scss';
+
+nav {
+  padding: 6px;
+}
+
+.navigationItems {
+  transition: 300ms ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-right: 16px;
+  padding-top: 80px;
+
+  &.left {
+  align-items: flex-start;
+}
+
+  &.center {
+    align-items: center;
+  }
+
+  &.right {
+    align-items: flex-end;
+  }
+}
+
+.navigationItems li {
+  position: relative;
+  transition: all .5s;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $font-mono;
+  font-weight: bold;
+  margin: .75rem;
+  border: .2rem solid transparent;
+  background-image: $bg-grad-1;
+  background-origin: border-box;
+  background-clip: border-box;
+  border-radius: 500rem;
+
+  a {
+    display: inline-block;
+    padding: .75rem 1.5rem;
+    box-shadow: none;
+    color: $dkgreen-900;
+    border-radius: inherit;
+    transition: all .5s;
+
+    &:hover {
+      color: inherit;
+      background: $bg-grad-dark;
+    }
+  }
+}
