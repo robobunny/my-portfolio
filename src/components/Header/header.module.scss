@@ -41,7 +41,6 @@ div.menuOpen {
   width: 95vw;
   margin: 3.5vw 2.5vw;  
   text-align: center;
-  font-size: 5.8vw;
   flex-grow: 1;
   
 }
@@ -53,12 +52,14 @@ div.menuOpen {
   margin: 0 16px 0 0;
   display: inline-block;
   text-align: center;
-  background-color: rgba($color: $bunny-100, $alpha: 0.1);
-  
+  border: .2rem solid;
+  background-image: $bg-grad-1;
+  background-origin: border-box;
+  background-clip: text;
+  border-image: $bg-grad-1;
+  border-image-slice: 1;
+  color: transparent;
   font-family: $font-mono;
-  border: 3px $bunny-100 solid;
-  // box-shadow: -3px 3px $bunny-100;
-  border-radius: 5px;
 }
 
 .menuContainer {

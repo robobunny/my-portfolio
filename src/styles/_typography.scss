@@ -45,86 +45,51 @@
     }
 
 // Sizes
-$baseline: 1.5rem;
-
-$minScreen: 20rem;
-$maxScreen: 100rem;
-$minFont: .9rem;
-$maxFont: 2.2rem;
-
-$h1: 2.2rem;
-$h2: 1.5rem;
-$h3: 1.25rem;
-$h4: 1rem;
-$h5: .875rem;
-
-
-@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
-	& {
-		@each $property in $properties {
-			#{$property}: $min-value;
-		}
-
-		@media screen and (min-width: $min-vw) {
-			@each $property in $properties {
-				#{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
-		}
-
-		@media screen and (min-width: $max-vw) {
-			@each $property in $properties {
-				#{$property}: $max-value;
-			}
-		}
-	}
-}
-
-@function strip-unit($value) {
-	@return $value / ($value * 0 + 1);
-}
+$font-size: clamp(16px, calc(.5rem + 2.5vmin), 32px);
+$line-height: calc((1.25 * (.5rem + 2vmin)) + 2vw);
 
 html {
-	height: 100%;
-	font-smoothing: antialiased;
+	font-smooth: antialiased;
 	text-rendering: optimizeLegibility;
-	@include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
 }
 
 body {
-	line-height: $baseline;
+	font-size: $font-size;
+	line-height: $line-height;
 }
 
 p{	
-	line-height: $baseline;
-	margin-bottom: $baseline;
+	font-family: $font-text;
+}
+
+h1,h2,h3,h4 {
+	font-family: $font-heading;
+	font-weight: bold;
 }
 
 h1 {
-	font-size: $h1;
-	line-height: $h1;
-	margin-top: calc((#{$baseline} - #{$h1}) + #{$baseline});
+	font-size: calc($font-size * 4.83);
 }
 
 h2 {
-	font-size: $h2;
-	line-height: $h2;
-	margin-top: calc((#{$baseline} - #{$h2}) + #{$baseline}*2);
+	font-size: calc($font-size * 2.85);
 }
 
 h3 {
-	font-size: $h3;
-	line-height: $h3;
-	margin-top: calc((#{$baseline} - #{$h3}) + #{$baseline}*2);
+	font-size: calc($font-size * 1.69);
 }
 
 h4 {
-	font-size: $h4;
-	line-height: $h4;
-	margin-top: calc((#{$baseline} - #{$h4}) + #{$baseline}*2);
+	font-size: calc($font-size * 1.3);
 }
 
-h5 {
-	font-size: $h5;
-	line-height: $h5;
-	margin-top: calc((#{$baseline} - #{$h5}) + #{$baseline}*2);
-}
+a {
+	color: $color-primary;
+	text-decoration: none;
+	font-weight: bold;
+	box-shadow: inset 0 -.5em $bunny-900, 0 .125em $bunny-900;
+
+	&:hover {
+		box-shadow: inset 0 -.5em $bunny-700, 0 .125em $bunny-700;
+	}
+  }

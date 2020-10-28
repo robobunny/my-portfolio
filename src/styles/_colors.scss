@@ -76,8 +76,8 @@ $yellow-900: #7A6B01;
 
 $bg-grad-1: 
   linear-gradient(83deg, 
-    rgba($color: $bunny-700, $alpha: 1.0) -11.53%, 
-    rgba($color: $bunny-300, $alpha: 0.1) 106.59%);
+    rgba($color: $bunny-500, $alpha: 1.0) -11.53%, 
+    rgba($color: $bunny-700, $alpha: 0.35) 106.59%);
   
     // radial-gradient(96% 106% at 100% -2.59%,
     // $bunny-800 0%,
@@ -103,7 +103,7 @@ $bg-grad-dark:
   radial-gradient(162.6% 73.37% at -30% 124.82%,
     $dkgreen-700 0%, 
     rgba(255, 255, 255, 0) 100%
-  ), #002010;
+  ), #001005;
 
 $shadow-grad-1:
   linear-gradient(-90deg, rgba($color: $dkgreen-900, $alpha: 0) 0%, $bunny-800 100%)

@@ -8,5 +8,5 @@
 }
 
 .homeLayoutContent {
-  margin: 0 5vw;
+  margin: 0 calc(max(5vw, calc(20vw - 75px)));
 }
