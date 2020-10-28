@@ -10,6 +10,8 @@ header {
   top: 0;
   z-index: 2;
   transition: 300ms ease-in-out;
+  padding: 1vw;
+  width: 100%;
 }
 
 .headerContent {
@@ -22,7 +24,7 @@ header {
 .imageContainer {
   z-index: 1;
   cursor: pointer;
-  width: 64px;
+  width: clamp(64px, (5vmin), 128px);
   margin: 12px;
   transition: all 300ms ease-in-out;
 }
@@ -37,29 +39,31 @@ div.menuOpen {
 
 .siteTitle {
   position: absolute;
-  top: 15px;
-  width: 95vw;
-  margin: 3.5vw 2.5vw;  
+  width: 100%;
+  margin: 1.5rem auto 0;  
   text-align: center;
-  flex-grow: 1;
-  
+  font-size: calc(.5rem + 4vmin);
+  color: transparent;
+  background: $bg-grad-1;
+  background-clip: text;
 }
 
 .menuButton {
   z-index: 1;
   cursor: pointer;
-  padding: 9px 11px;
-  margin: 0 16px 0 0;
   display: inline-block;
   text-align: center;
-  border: .2rem solid;
-  background-image: $bg-grad-1;
-  background-origin: border-box;
-  background-clip: text;
+  font-size: calc(1.5rem + 5vmin);
+  padding-bottom: 3px;
+  // width: clamp(64px, (5vmin), 128px);
+  border: calc(.2rem + .25vmin) solid;
   border-image: $bg-grad-1;
   border-image-slice: 1;
+  background: $bg-grad-1;
+  background-clip: text;
+  background-origin: border-box;
   color: transparent;
-  font-family: $font-mono;
+  margin: 12px;
 }
 
 .menuContainer {

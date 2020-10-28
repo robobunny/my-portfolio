@@ -35,7 +35,7 @@ nav {
   font-family: $font-mono;
   font-weight: bold;
   margin: 1.5rem;
-  border: .2rem solid;
+  border: calc(.2rem + .25vmin) solid;
   background-image: $bg-grad-1;
   background-origin: border-box;
   background-clip: text;
@@ -54,4 +54,8 @@ nav {
       color: $black-800;
     }
   }
+}
+
+header .navigationItems li {
+  margin: .5rem;
 }

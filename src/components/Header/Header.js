@@ -3,6 +3,7 @@ import { Navigation } from '../Navigation/Navigation'
 import style from "./header.module.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
+import MenuIcon from "../../images/svg/hamburger.inline.svg"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -35,7 +36,7 @@ const Header = () => {
           </Link>
         </div>
         <button className={`${style.menuButton}`} onClick={toggleMenuOpen}>
-          ☰
+          ≡
         </button>
       </div>
       <div className={`${style.menuContainer} ${menuOpen && style.menuOpen}`}>
