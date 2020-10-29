@@ -3,9 +3,9 @@ type: "blogPost"
 isDraft: false
 path: "/tdd-first-test"
 date: "2020-10-30 17:00"
-title: "Writing a React App using TDD"
+title: "My Project's First Test"
 tags: ['TDD','reactjs','Jest','extreme TDD']
-excerpt: "Let's see if I can write a React App without ever opening the browser!"
+excerpt: "I start my new adventure with the basics of TDD"
 ---
 # My first test
 
