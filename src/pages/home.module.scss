@@ -3,10 +3,6 @@
 //    The scale factor can be calculated with:
 //    (perspective - translateZ) / perspective
 
-.splashPage {
-  
-}
-
 .parallax {
   perspective: 2px;
   perspective-origin: top;
@@ -31,14 +27,6 @@
   height: 100vh;
   transform-style: preserve-3d;
 }
-
-.pGroup1 {
-  
-}
-
-// .pGroup2 {
-//   background: burlywood;
-// }
 
 .parallaxBack2 {
   transform: translateZ(-2px) scale(2);
@@ -66,9 +54,7 @@
 }
 
 .siteTitle {
-  // font-size: 3.2rem;
-  // line-height: 3.2rem;
-  display: inline-block;
+  font-size: calc(8vmin + 30px);
   margin: 0 7vw;
 
   @media all and (min-width: 800px) {
@@ -77,7 +63,7 @@
 }
 
 .siteSubtitle {
-  display: inline-block;
+  font-size: calc(2vmin + 7.5px);
   box-sizing: border-box;
   margin: 1.4rem 7vw 0;
 
@@ -100,11 +86,38 @@
 .bunny {
   z-index: 0;
   width: clamp(256px, 25vw ,512px);
-  padding: calc(350px + 60vh) 0 90vh;
+  padding: calc(350px + 100vh) 0 90vh;
   margin: 0 auto;
 }
 
 .navigation {
-  padding: calc(800px + 125vh) 0 10vh;
+  padding: calc(400px + 62.5vh) 0 10vh;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    z-index: 1;
+    font-family: $font-text;
+    text-transform: uppercase;
+    letter-spacing: .25ch;
+    color: transparent;
+    cursor: pointer;
+    padding: .5ch 1ch;
+    margin: 1ch 0;
+    display: inline-block;
+    text-align: center;
+    border: 5px solid;
+    border-image: $bg-grad-1;
+    border-image-slice: 1;
+    background: $bg-grad-1;
+    background-clip: text;
+    text-align: left;
+    box-shadow: none;
+    &:hover {
+      transform: translate(0, -.25rem);
+      box-shadow: 0 .5rem 1rem $bunny-800;
+    }
+  }
 }
