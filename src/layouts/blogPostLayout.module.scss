@@ -4,11 +4,14 @@
   display: block;
   overflow: hidden;
   position: relative;
-  padding-top: clamp(128px, (10vmin), 256px);
   padding-bottom: 45vh;
   min-height: 100vh;
 }
 
+.mainContainer {
+  padding-top: clamp(128px, (10vmin), 256px);
+}
+
 .blogPostLayoutContent {
-  margin: 0 5vw;
+  margin: 0 calc(max(5vw, calc(25vw - 75px)));
 }
