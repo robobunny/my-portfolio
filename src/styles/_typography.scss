@@ -1,5 +1,5 @@
 // Fira Code 400, 700
-// @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 // Courier Prime 400, 700
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 // Raleway 300, 400, 700, 900 & italic 300, 400, 700, 900
@@ -14,8 +14,8 @@
   // Typefaces
   $font-heading: 'Raleway', sans-serif;
   $font-text: 'Cantarell', serif;
-  $font-mono: 'Courier Prime', 'Fira Code', 'Courier New' monospace;
-  $font-accent: 'Krona One', 'Raleway', sans-serif;
+  $font-mono: 'Fira Code', 'Courier Prime', monospace;
+  $font-accent: 'Krona One', sans-serif;
 
   // Colors
   $color-primary: $bunny-100;
@@ -64,24 +64,27 @@ p{
 
 h1,h2,h3,h4 {
 	font-family: $font-heading;
-	font-weight: bold;
+  font-weight: bold;
 }
 
 h1 {
-  font-size: calc(2.617rem + 6.85vmin);
+  font-size: calc(1.618rem + 4vmin);
   line-height: 1em;
 }
 
 h2 {
-	font-size: calc(2.617rem + 4.87vmin);
+  font-size: calc(1.618rem + 3vmin);
+  line-height: 1em;
 }
 
 h3 {
-	font-size: calc(1.618rem + 2.617vmin);
+  font-size: calc(1.618rem + 2vmin);
+  line-height: 1em;
 }
 
 h4 {
-	font-size: calc(1rem + 1.618vmin);
+  font-size: calc(1rem + 1vmin);
+  line-height: 1em;
 }
 
 a {

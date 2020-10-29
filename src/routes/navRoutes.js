@@ -5,30 +5,31 @@ export const navRoutes = [
   //   navOrder:
   //     Int => sort order for navigation Bar
   //     -1 => do not show on navigation bar
+  //   displayOnHome: Boolean! whether link will be displayed on the home page
   //  
   {
     path: "/",
     name: "Home",
-    navOrder: -1
+    navOrder: 0
   },
   {
     path: "/blog",
     name: "My Blog",
-    navOrder: 2
+    navOrder: 3
   },
   {
     path: "/projects",
     name: "My Projects",
-    navOrder: 1
+    navOrder: 2
   },
   {
     path: "/contact",
     name: "Contact Me",
-    navOrder: 3
+    navOrder: 4
   },
   {
     path: "/about",
     name: "About Me",
-    navOrder: 0
+    navOrder: 1
   }
 ]

@@ -5,74 +5,24 @@
 }
 
 header {
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
   top: 0;
   z-index: 2;
-  transition: 300ms ease-in-out;
   padding: 1vw;
-  width: 100%;
-}
-
-.headerContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  width: 100vw;
 }
 
 .imageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
   cursor: pointer;
-  width: clamp(64px, (5vmin), 128px);
-  margin: 12px;
+  width: clamp(64px, calc(12.5vmin), 100px);
   transition: all 300ms ease-in-out;
-}
-
-div.menuOpen {
-  max-height: 100vh;
+  padding: 0;
 }
 
 .rotate {
   transform: rotate(360deg);
-}
-
-.siteTitle {
-  position: absolute;
-  width: 100%;
-  margin: 1.5rem auto 0;  
-  text-align: center;
-  font-size: calc(.5rem + 4vmin);
-  color: transparent;
-  background: $bg-grad-1;
-  background-clip: text;
-}
-
-.menuButton {
-  z-index: 1;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  font-size: calc(1.5rem + 5vmin);
-  padding-bottom: 3px;
-  // width: clamp(64px, (5vmin), 128px);
-  border: calc(.2rem + .25vmin) solid;
-  border-image: $bg-grad-1;
-  border-image-slice: 1;
-  background: $bg-grad-1;
-  background-clip: text;
-  background-origin: border-box;
-  color: transparent;
-  margin: 12px;
-}
-
-.menuContainer {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  transition: all 400ms ease-in-out;
-  max-height: 0;
-  width: 100%;
-  overflow: hidden;
-  background: $bg-grad-dark;
 }

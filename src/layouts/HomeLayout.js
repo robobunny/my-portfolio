@@ -7,14 +7,14 @@
 
 import React from "react"
 import Footer from "../components/Footer/Footer"
-import Header from "../components/Header/Header"
 import style from "./homeLayout.module.scss"
+import Header from "../components/Header/Header"
 
 const HomeLayout = ({ children }) => {
   return (
     <div className={style.homeLayout}>
       <Header />
-        <main>
+        <main className={style.mainContainer}>
           <div className={style.homeLayoutContent}>
             {children}
           </div>

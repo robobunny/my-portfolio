@@ -26,6 +26,11 @@ export default function ProjectTemplate({ data }) {
         <Img
           fluid={imageSrc}
           alt={`Screenshot from the ${title} app`}
+          imgStyle={{
+            maxWidth: "85%",
+            maxHeight: "50vh",
+            objectFit: "scale-down"
+          }}
           className={style.imageContainer}
         />
       )

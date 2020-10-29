@@ -64,15 +64,15 @@ const IndexPage = ({ data }, ...props) => {
   )
 
   const HomeNavigation = () => (
-    <div
+    <ul
       className={`\
         ${style.parallaxLayer} \
         ${style.parallaxBase} \
         ${style.navigation} \
       `}
     >
-      {buildNavigationItems()}
-    </div>
+      {buildNavigationItems(false)}
+    </ul>
   )
 
   return (

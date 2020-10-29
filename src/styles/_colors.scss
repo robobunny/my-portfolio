@@ -76,34 +76,19 @@ $yellow-900: #7A6B01;
 
 $bg-grad-1: 
   linear-gradient(83deg, 
-    rgba($color: $bunny-500, $alpha: 1.0) -11.53%, 
-    rgba($color: $bunny-700, $alpha: 0.35) 106.59%);
-  
-    // radial-gradient(96% 106% at 100% -2.59%,
-    // $bunny-800 0%,
-    // rgba($color: $bunny-800, $alpha: 0) 100%);
+    rgba($color: $bunny-100, $alpha: 1) -11.53%, 
+    rgba($color: $bunny-400, $alpha: 1) 106.59%);
 
 $bg-grad-2: 
-  radial-gradient(96.38% 106.82% at 100% -2.59%, 
-    #D7FECB 0%, 
-    rgba(0, 238, 32, 0) 100%), 
-  linear-gradient(180deg, 
-    #D7FECB 0%, 
-    #00AB36 100%);
-
-$bg-grad-3: 
-  radial-gradient(96.38% 106.82% at 100% -2.59%, 
-    #D7FECB 0%, 
-    rgba(0, 238, 32, 0) 100%), 
-  linear-gradient(180deg, 
-    #D7FECB 0%, 
-    #00AB36 100%);
+  linear-gradient(83deg, 
+    rgba($color: $bunny-500, $alpha: 1) -11.53%, 
+    rgba($color: $bunny-800, $alpha: 1) 106.59%);
 
 $bg-grad-dark:
   radial-gradient(162.6% 73.37% at -30% 124.82%,
     $dkgreen-700 0%, 
-    rgba(255, 255, 255, 0) 100%
-  ), #001005;
+    rgba(255, 255, 255, 0) 100%),
+  #001005;
 
 $shadow-grad-1:
   linear-gradient(-90deg, rgba($color: $dkgreen-900, $alpha: 0) 0%, $bunny-800 100%)
