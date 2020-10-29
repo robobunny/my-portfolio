@@ -15,18 +15,20 @@ export default function CodeResume({ data }) {
         className={style.resume}
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <Link
-        to={"/projects"}
-        className={style.button}
-      >
-        My Projects
-      </Link>
-      <Link
-        to={"/contact"}
-        className={style.button}
-      >
-        Contact Me
-      </Link>
+      <p>
+        <Link
+          to={"/projects"}
+        >
+          My Projects
+        </Link>
+      </p>
+      <p>
+        <Link
+          to={"/contact"}
+        >
+          Contact Me
+        </Link>
+      </p>
     </HomeLayout>
   )
 }

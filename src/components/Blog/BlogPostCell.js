@@ -8,7 +8,7 @@ const BlogPostCell = (props) => {
   const goToPost = () => navigate(`${postPath}`)
   return (
     <button onClick={goToPost} className={style.blogPostCell}>
-      <p className={style.title}>{title}</p>
+      <h3 className={style.title}>{title}</h3>
       <p className={style.date}>{date}</p>
       <blockquote className={style.excerpt}>{excerpt}</blockquote>
       <p className={style.tags}>{

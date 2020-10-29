@@ -1,0 +1,45 @@
+@import '../../styles/styles.scss';
+
+nav {
+  padding: 6px;
+}
+
+.navigationItems {
+  display: flex;
+  flex-flow: column;
+  transition: 300ms ease-in-out;
+  padding-right: 16px;
+  padding-top: 80px;
+}
+
+.navigationItems li {
+  transition: all .5s;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $font-mono;
+  font-weight: bold;
+  margin: 1.5rem;
+  border: calc(.2rem + .25vmin) solid;
+  background-image: $bg-grad-1;
+  background-origin: border-box;
+  background-clip: text;
+  border-image: $bg-grad-1;
+  border-image-slice: 1;
+
+  a {
+    display: inline-block;
+    padding: .75rem 1.5rem;
+    box-shadow: none;
+    color: transparent;
+    transition: all .5s;
+
+    &:hover {
+      background: $bg-grad-1;
+      color: $black-800;
+    }
+  }
+}
+
+header .navigationItems li {
+  margin: .5rem;
+}

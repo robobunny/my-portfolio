@@ -8,16 +8,14 @@
 
 html {
   box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background: $bg-grad-2;
+  background: $bg-grad-dark;
   background-attachment: fixed;
   mix-blend-mode: normal;
 }
 
 body {
-  box-sizing: border-box;
-  overflow: unset;
+  height: 100vh;
+  width: 100vw;
 }
 
 ul {
@@ -26,7 +24,4 @@ ul {
   list-style-type: none;
 }
 
-a {
-  text-decoration: none;
-  box-shadow: inset 0 -.5em $bunny-500, 0 .25em $bunny-500;
-}
+

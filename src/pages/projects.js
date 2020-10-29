@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
-import ProjectList from "../components/Projects/ProjectList"
+import ProjectsList from "../components/Projects/ProjectsList"
 import SEO from "../components/seo"
 import HomeLayout from "../layouts/HomeLayout"
 import style from "./projects.module.scss"
@@ -12,7 +12,7 @@ const ProjectsPage = ({ data }) => {
       <SEO title="My Projects" />
       <h1 className={style.title}>My Projects</h1>
       <p className={style.content}>Here are a few of the things I've made:</p>
-      <ProjectList />
+      <ProjectsList />
       <div
         className={style.content}
         dangerouslySetInnerHTML={{ __html: infoText }}

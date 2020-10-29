@@ -11,7 +11,7 @@ const NotFoundPage = () => (
     <div className={style.content}>
       <p>You just hopped on a route that doesn&#39;t exist... the sadness.</p>
       <p>
-        But wait a second ... If a route re-routes to the 404 page, then in a way,
+        But wait a second ... If a route automatically re-routes to the 404 page, then in a way,
         it does exist, doesn't it?
       </p>
       <p>

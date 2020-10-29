@@ -10,7 +10,7 @@ pre[class*="language-"] {
 	background: none;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	font-family: "Fira Code", 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 4.7vw;
+	font-size: calc(.5rem + 2.5vmin);
 	text-align: left;
 	white-space: pre-wrap;
 	word-spacing: normal;
