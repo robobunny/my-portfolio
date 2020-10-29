@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import style from "./header.module.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
@@ -17,16 +17,25 @@ const Header = () => {
     }
   `)
 
+  const [menuOpen, setMenuOpen] = useState(false)
+  const toggleMenuOpen = () => {
+    setMenuOpen(!menuOpen)
+  }
+
   return (
     <header className={style.header}>
       <div className={style.headerContent}>
         <Link to="/" className={style.homeLink}>
           <Img 
             fluid={data.lilBunny.childImageSharp.fluid}
-            className={`${style.imageContainer}`}
+            className={`${style.imageContainer} ${menuOpen && style.rotate}`}
           />
         </Link>
-        <Navigation />
+        <Navigation
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+          toggleMenuOpen={toggleMenuOpen}
+        />
       </div>
     </header>
   )
