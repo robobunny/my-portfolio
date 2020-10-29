@@ -1,31 +1,55 @@
 @import "../../styles/styles.scss";
 
 nav {
+  z-index: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: $bg-grad-1;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: $bg-grad-2;
+  width: 100%;
+  max-width: 30ch;
   height: 100vh;
   text-align: left;
-  padding: 2rem;
+  padding: clamp(84px, calc(12.5vmin), 200px) calc(5ch - 2.5vmin);
   position: absolute;
   top: 0;
-  left: 0;
-//   transform: translate(-100%);
+  right: 0;
   transition: transform 0.3s ease-in-out;
 
+  &.menuOpen {
+    transform: translate(0);
+  }
+
+  &.menuClosed {
+    transform: translate(100%);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
   a {
-    font-size: 2rem;
+    display: inline-block;
     text-transform: uppercase;
-    padding: 2rem 0;
+    text-align: center;
+    font-family: $font-mono;
     font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: $bunny-900;
+    color: $dkgreen-700;
     text-decoration: none;
-    transition: color 0.3s linear;
+    box-shadow: none;
+    padding: .5ch 1ch;
+    margin: 1ch 0;
+    border: .2em solid $dkgreen-700;
+    width: 100%;
 
     &:hover {
-      color: $bunny-800;
+      color: $bunny-900;
+      border-color: $bunny-900;
+      box-shadow: none;
     }
   }
 }

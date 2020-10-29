@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import { navRoutes } from "../routes/navRoutes"
 
-export default function buildNavigationItems () {
+export default function buildNavigationItems (showHomeLink = true) {
     const navBarItems = []
     let routes = navRoutes
-      .filter(route => route.navOrder !== -1)
+      .filter(route => showHomeLink || route.path !== "/")
       .sort((a, b) => (
         a.navOrder - b.navOrder
       ))

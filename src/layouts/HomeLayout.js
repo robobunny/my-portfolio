@@ -6,22 +6,19 @@
  */
 
 import React from "react"
-import Burger from "../components/Navigation/Burger"
 import Footer from "../components/Footer/Footer"
-// import Header from "../components/Header/Header"
-import Menu from "../components/Navigation/Menu"
 import style from "./homeLayout.module.scss"
+import Header from "../components/Header/Header"
 
 const HomeLayout = ({ children }) => {
   return (
     <div className={style.homeLayout}>
-      {/* <Header /> */}
-        <main className={style.mainContainer}>
-          <Navigation />
-          <div className={style.homeLayoutContent}>
-            {children}
-          </div>
-        </main>
+      <Header />
+      <main className={style.mainContainer}>
+        <div className={style.homeLayoutContent}>
+          {children}
+        </div>
+      </main>
       <Footer />
     </div>
   )

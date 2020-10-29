@@ -1,15 +1,18 @@
 import React from 'react'
 import style from "./burger.module.scss"
 
-const Burger = ({ open, toggleMenuOpen }) => {
+const Burger = ({ menuOpen, toggleMenuOpen, ...props }) => {
   return (
     <button 
-        className={`${style.burger} ${open ? style.menuOpen : style.menuClosed}`}
-        onClick={toggleMenuOpen}
+      aria-label={`Toggle Menu`} 
+      aria-expanded={menuOpen}     
+      className={`${style.burger} ${menuOpen ? style.menuOpen : style.menuClosed}`}
+      onClick={toggleMenuOpen}
+      {...props}
     >
-      <div />
-      <div />
-      <div />
+      <span className={`${menuOpen ? style.menuOpen : style.menuClosed}`}/>
+      <span className={`${menuOpen ? style.menuOpen : style.menuClosed}`}/>
+      <span className={`${menuOpen ? style.menuOpen : style.menuClosed}`}/>
     </button>
   )
 }

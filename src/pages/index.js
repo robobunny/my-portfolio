@@ -71,7 +71,7 @@ const IndexPage = ({ data }, ...props) => {
         ${style.navigation} \
       `}
     >
-      {buildNavigationItems()}
+      {buildNavigationItems(false)}
     </div>
   )
 

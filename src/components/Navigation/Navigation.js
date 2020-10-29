@@ -1,26 +1,32 @@
-import React, { useState } from "react"
-// import style from "./navigation.module.scss"
+import React, { useRef, useState } from "react"
+import FocusLock from "react-focus-lock"
 import Burger from "./Burger"
 import Menu from "./Menu"
-
-// Expects an align prop which can be 'left', 'right', or 'center'
+import useOnClickOutside from "../../functions/useOnClickOutside"
 
 const Navigation = (props) => {
-  const [menuOpen, setMenuOpen] = useState(true)
-  // const [menuOpenStyles, setMenuOpenStyles] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const toggleMenuOpen = () => {
-    // setTimeout(()=>{setMenuOpenStyles(!menuOpenStyles)}, 300)
     setMenuOpen(!menuOpen)
   }
+  const node = useRef()
+  const menuId = "main-menu"
+  useOnClickOutside(node, ()=>setMenuOpen(false))
 
   return (
-    <div>
-      <Burger 
-        toggleMenuOpen={toggleMenuOpen}
-      />
-      <Menu 
-        menuOpen={menuOpen}
-      />
+    <div ref={node}>
+      <FocusLock disabled={!menuOpen}>
+        <Burger
+          menuOpen={menuOpen}
+          toggleMenuOpen={toggleMenuOpen}
+          aria-controls={menuId}
+        />
+        <Menu 
+          menuOpen={menuOpen}
+          toggleMenuOpen={toggleMenuOpen}
+          id={menuId}
+        />
+      </FocusLock>
     </div>
   )
 }

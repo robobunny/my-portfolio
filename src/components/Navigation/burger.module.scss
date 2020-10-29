@@ -2,30 +2,71 @@
 
 .burger {
   position: absolute;
-  top: 5%;
-  left: 2rem;
+  top: 1.5vmin;
+  right: 1.5vmin;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: clamp(64px, (12.5vmin), 128px);
+  height: clamp(64px, (12.5vmin), 128px);;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
   z-index: 10;
-  
+  padding: 1.5vmin;
+
   &:focus {
     outline: none;
   }
   
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background: $bg-grad-1;
+  span {
+    width: 100%;
+    height: 12.5%;
     border-radius: 10px;
-    transition: all 0.3s linear;
+    transition: all 0.3s ease-in-out;
     position: relative;
     transform-origin: 1px;
+
+    &.menuOpen {
+      background-color: $dkgreen-800;
+    }
+
+    &.menuClosed {
+      background: $bunny-500;
+    }
+
+    &:first-child {
+
+      &.menuOpen {
+        transform: rotate(45deg);
+      }
+
+      &.menuClosed {
+        transform: rotate(0deg);
+      }
+    }
+
+    &:nth-child(2) {
+
+      &.menuOpen {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      &.menuClosed {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    &:nth-child(3) {
+      &.menuOpen {
+        transform: rotate(-45deg);
+      }
+
+      &.menuClosed {
+        transform: rotate(0deg);
+      };
+    }
   }
 }

@@ -8,9 +8,10 @@
 }
 
 .mainContainer {
-
+  padding-top: clamp(128px, (10vmin), 256px);
 }
 
 .homeLayoutContent {
+  z-index: 1;
   margin: 0 calc(max(5vw, calc(25vw - 75px)));
 }

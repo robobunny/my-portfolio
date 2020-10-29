@@ -2,10 +2,16 @@ import React from "react"
 import buildNavigationItems from "../../functions/buildNavigationItems"
 import style from "./menu.module.scss"
 
-const Menu = ({ open }) => {
+const Menu = ({ menuOpen, ...props }) => {
   return (
-    <nav className={`${style.menu} ${open ? style.menuOpen : style.menuClosed}`}>
-      {buildNavigationItems()}
+    <nav
+      aria-hidden={!menuOpen}
+      className={`${style.menu} ${menuOpen ? style.menuOpen : style.menuClosed}`}
+      {...props}
+    >
+      <ul>
+        {buildNavigationItems()}
+      </ul>
     </nav>
   )
 }
