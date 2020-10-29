@@ -11,14 +11,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/images/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `copy`,
-        path: `${__dirname}/src/copy`,
+        path: `${__dirname}/src/copy/`,
       },
     },
     `gatsby-transformer-sharp`,
