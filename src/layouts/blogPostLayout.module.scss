@@ -4,7 +4,8 @@
   display: block;
   overflow: hidden;
   position: relative;
-  padding-bottom: 25vh;
+  padding-top: clamp(128px, (10vmin), 256px);
+  padding-bottom: 45vh;
   min-height: 100vh;
 }
 

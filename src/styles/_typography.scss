@@ -64,7 +64,7 @@ p{
 
 h1,h2,h3,h4 {
 	font-family: $font-heading;
-	font-weight: bold;
+  font-weight: bold;
 }
 
 h1 {
@@ -73,15 +73,18 @@ h1 {
 }
 
 h2 {
-	font-size: calc(1.618rem + 3vmin);
+  font-size: calc(1.618rem + 3vmin);
+  line-height: 1em;
 }
 
 h3 {
-	font-size: calc(1.618rem + 2vmin);
+  font-size: calc(1.618rem + 2vmin);
+  line-height: 1em;
 }
 
 h4 {
-	font-size: calc(1rem + 1vmin);
+  font-size: calc(1rem + 1vmin);
+  line-height: 1em;
 }
 
 a {
