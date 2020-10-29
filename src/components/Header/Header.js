@@ -7,7 +7,7 @@ import Navigation from "../Navigation/Navigation"
 const Header = () => {
   const data = useStaticQuery(graphql`
     {
-      lilBunny: file(relativePath: {eq: "./bunny256.png"}) {
+      lilBunny: file(relativePath: {eq: "bunny256.png"}) {
         childImageSharp {
           fluid(maxWidth: 256) {
             ...GatsbyImageSharpFluid_noBase64
