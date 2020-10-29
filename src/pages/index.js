@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import style from "./home.module.scss"
 import Img from "gatsby-image"
-import { Navigation } from "../components/Navigation/Navigation"
+import buildNavigationItems from "../functions/buildNavigationItems"
 
 const IndexPage = ({ data }, ...props) => {
   const imgSrc = [
@@ -26,53 +26,64 @@ const IndexPage = ({ data }, ...props) => {
     },
   ]
 
+  const TitleBlock = () => (
+    <div
+      className={`\
+        ${style.parallaxLayer} \
+        ${style.parallaxBack1} \
+        ${style.info} \
+      `}
+    >
+      <h1 className={style.siteTitle}>{"William C. Duraney"}</h1>
+      <p className={style.siteSubtitle}>{"Fullstack Javascript Developer"}</p>
+    </div>
+  )
+
+  const ProfilePic = () => (
+    <div
+      className={`\
+        ${style.parallaxLayer} \
+        ${style.parallaxForward1} \
+        ${style.profileImage} \
+      `}
+    >
+      <Img fluid={profilePic} />
+    </div>
+  )
+
+  const BunnyLogo = () => (
+    <div
+      className={`\
+        ${style.bunny} \
+        ${style.parallaxLayer} \
+        ${style.parallaxBack2} \
+      `}
+    >
+      <Img fluid={imgSrc} />
+    </div>
+  )
+
+  const HomeNavigation = () => (
+    <div
+      className={`\
+        ${style.parallaxLayer} \
+        ${style.parallaxBase} \
+        ${style.navigation} \
+      `}
+    >
+      {buildNavigationItems()}
+    </div>
+  )
+
   return (
     <div className={`${style.splashPage} ${style.parallax}`}>
       <SEO title="Home" />
       <div className={`${style.parallaxGroup} ${style.pGroup1}`}>
-        <div
-          className={`\
-            ${style.bunny} \
-            ${style.parallaxLayer} \
-            ${style.parallaxBack2} \
-          `}
-        >
-          <Img fluid={imgSrc} />
-        </div>
-        <div
-          className={`\
-            ${style.parallaxLayer} \
-            ${style.parallaxBack1} \
-            ${style.info} \
-          `}
-        >
-          <h1 className={style.siteTitle}>{"William C. Duraney"}</h1>
-          <p className={style.siteSubtitle}>
-            {"Fullstack Javascript Developer"}
-          </p>
-        </div>
-        <div
-          className={`\
-            ${style.parallaxLayer} \
-            ${style.parallaxForward1} \
-            ${style.profileImage} \
-          `}
-        >
-          <Img fluid={profilePic} />
-        </div>
-        <div
-          className={`\
-            ${style.parallaxLayer} \
-            ${style.parallaxBase} \
-            ${style.navigation} \
-          `}
-        >
-          <Navigation align="center" />
-        </div>
+        <BunnyLogo />
+        <TitleBlock />
+        <ProfilePic />
+        <HomeNavigation />
       </div>
-      {/*<div className={`${style.parallaxGroup} ${style.pGroup2}`}>
-        <p>Some words</p>
-      </div>*/}
     </div>
   )
 }

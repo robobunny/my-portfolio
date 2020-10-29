@@ -10,22 +10,6 @@ nav {
   transition: 300ms ease-in-out;
   padding-right: 16px;
   padding-top: 80px;
-
-  &.left {
-  align-items: flex-start;
-}
-
-  &.center {
-    align-items: center;
-  }
-
-  &.right {
-    align-items: flex-end;
-  }
-
-  & ul {
-    margin: 0 auto;
-  }
 }
 
 .navigationItems li {

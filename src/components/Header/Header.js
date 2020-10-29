@@ -3,7 +3,6 @@ import { Navigation } from '../Navigation/Navigation'
 import style from "./header.module.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import MenuIcon from "../../images/svg/hamburger.inline.svg"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -40,7 +39,6 @@ const Header = () => {
         </button>
       </div>
       <div className={`${style.menuContainer} ${menuOpen && style.menuOpen}`}>
-        <h2 className={style.siteTitle}>William C. Duraney</h2>
         <Navigation align="right"/>
       </div>
     </header>
