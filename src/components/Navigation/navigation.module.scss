@@ -1,12 +1,15 @@
 @import '../../styles/styles.scss';
 
 nav {
+  width: 0px;
+  transition: all .5s ease-in-out;
   padding: 6px;
 }
 
 .navigationItems {
   display: flex;
   flex-flow: column;
+  align-items: flex-end;
   transition: 300ms ease-in-out;
   padding-right: 16px;
   padding-top: 80px;

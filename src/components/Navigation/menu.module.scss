@@ -1,0 +1,31 @@
+@import "../../styles/styles.scss";
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $bg-grad-1;
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+//   transform: translate(-100%);
+  transition: transform 0.3s ease-in-out;
+
+  a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: $bunny-900;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $bunny-800;
+    }
+  }
+}
