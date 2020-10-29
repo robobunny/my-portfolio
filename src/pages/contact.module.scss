@@ -1,28 +1,25 @@
 @import "../styles//styles.scss";
 
-* {
-  
-}
-
-.content {
-
-}
-
-.title {
-
-}
-
-.button {
+a.button {
   z-index: 1;
+  font-family: $font-text;
+  text-transform: uppercase;
+  letter-spacing: .25ch;
+  color: transparent;
   cursor: pointer;
   padding: 9px 11px;
   margin: 0 16px 0 0;
   display: inline-block;
   text-align: center;
-  background-color: rgba($color: $bunny-100, $alpha: 0.95);
-  
-  font-family: $font-mono;
-  border: 3px $bunny-100 solid;
-  box-shadow: -3px 3px $bunny-100;
-  border-radius: 5px;
+  border: 5px solid;
+  border-image: $bg-grad-1;
+  border-image-slice: 1;
+  background: $bg-grad-1;
+  background-clip: text;
+  text-align: left;
+  box-shadow: none;
+  &:hover {
+    transform: translate(0, -.25rem);
+    box-shadow: 0 .5rem 1rem $bunny-800;
+  }
 }

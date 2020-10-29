@@ -6,7 +6,7 @@ nav {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  background: $bg-grad-2;
+  background: $bg-grad-1;
   width: 100%;
   max-width: 30ch;
   height: 100vh;
@@ -36,8 +36,9 @@ nav {
     display: inline-block;
     text-transform: uppercase;
     text-align: center;
-    font-family: $font-mono;
+    font-family: $font-text;
     font-weight: bold;
+    letter-spacing: .25ch;
     color: $dkgreen-700;
     text-decoration: none;
     box-shadow: none;
@@ -47,8 +48,8 @@ nav {
     width: 100%;
 
     &:hover {
-      color: $bunny-900;
-      border-color: $bunny-900;
+      color: $bunny-100;
+      border-color: $bunny-100;
       box-shadow: none;
     }
   }

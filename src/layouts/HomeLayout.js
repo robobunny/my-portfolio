@@ -14,11 +14,11 @@ const HomeLayout = ({ children }) => {
   return (
     <div className={style.homeLayout}>
       <Header />
-      <main className={style.mainContainer}>
-        <div className={style.homeLayoutContent}>
-          {children}
-        </div>
-      </main>
+        <main className={style.mainContainer}>
+          <div className={style.homeLayoutContent}>
+            {children}
+          </div>
+        </main>
       <Footer />
     </div>
   )

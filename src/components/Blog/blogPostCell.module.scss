@@ -1,21 +1,28 @@
 @import "../../styles/styles.scss";
 
 .blogPostCell {
+  box-sizing: border-box;
   cursor: pointer;
-  // background-color: rgba($color: $bunny-100, $alpha: .25);
   margin: 10px;
   padding: 10px;
-  border: 5px $bunny-100 solid;
-  box-shadow: -3px 3px $bunny-100;
-  border-radius: 10px;
+  border: 5px solid;
+  border-image: $bg-grad-1;
+  border-image-slice: 1;
+  background: $bg-grad-1;
+  background-clip: text;
   text-align: left;
-  background: $shadow-grad-1;
-  width: 85vw;
+  width: 85%;
   overflow: auto;
+  color: transparent;
+  &:hover {
+    transform: translate(0, -.25rem);
+    box-shadow: 0 .5rem 1rem $bunny-800;
+  }
 }
 
 .title {
-  
+  color: $bunny-100;
+  margin: .5rem .5rem 1rem;
 }
 
 .date {
@@ -37,8 +44,9 @@
 }
 
 .tag {
+  color: $bunny-500;
   font-style: italic;
-  background-color: rgba($color: $grey-400, $alpha: .4);
+  background-color: $grey-900;
   line-height: 150%;
   margin: 5px;
   padding: 2px 3px;
